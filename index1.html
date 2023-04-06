@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-        }
-    
-    </style>
-
     <title>Document</title>
+    <style>
+    </style>
 </head>
-
 <body>
-    <h1>WEB</h1>
-    <input type="button" value="night" onclick="
-     document.querySelector('body').style.backgroundColor='black';
-     document.querySelector('body').style.color= 'white';
-    ">    
-    <input type="button" value="day" onclick="
-     document.querySelector('body').style.backgroundColor='white';
-     document.querySelector('body').style.color= 'black';
-    ">    
+    <h2 id="hello">안녕하세요</h2>
+    <h2 id="hello2">올때 메로나</h2>
+
+
+        <!-- 셀렉터 selector -->
+    <script>
+        document.getElementById('hello').innerText = '안녕';
+        /* 문서 ~의 가져오다요소(엘리먼트)Id에 의해서 ~의 내부요소  */
+        document.getElementById('hello2').innerHTML = '올때 죠스바';
+
+        document.getElementById('hello').style.fontSize = '30px';
+    </script>
+
 </body>
 </html>

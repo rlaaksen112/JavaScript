@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css/main.css">
+    </head>
+    <body>
+        <!-- UI만들기 1.미리 디자인하고 숨김 2.버튼 누르거나 하면 보여줌 -->
+        <div class="alert-box" id="alert">
+            <p>Alert 박스</p>
+            <button onclick="alert_end()">닫기</button>
+        </div>
+        <!-- <button onclick="자바스크립트~~"></button> -->
+        <button onclick="alert_start()">버튼</button>
+        <script>    /* 스크립트 코드는 HTML아래에 적는다 (HTML을 먼저 읽어야 JS로 조작이 가능) */
+            function alert_end(){
+                document.getElementById('alert').style.display = 'none';
+            }
+            function alert_start(){
+                document.getElementById('alert').style.display = 'block';
+            }
+        </script>
+    </body>
+</html>

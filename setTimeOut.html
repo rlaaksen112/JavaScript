@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css/main.css">
+        <script
+            src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="alert">
+            <h2>오늘 구매시 멋쟁이!</h2>
+        </div>
+        <div id="alert1">
+            <p id="count"></p>
+        </div>
+
+        <script>
+            // setTimeout(function(){     $('#alert').css('display','block');
+            // alert('setTimeout'); },1000);
+            let a = 1;
+            setInterval(function () {/* setTimeout : 한번   setInterval : 시간마다 주기적으로 */
+                a++
+                if (a % 2 == 0) {
+                    $('#alert').css('visibility', 'visible');
+                    $('#alert').css('opacity', '1');
+                } else {
+                    $('#alert').css('visibility', 'hidden');
+                    $('#alert').css('opacity', '0');
+                }
+            }, 3000);
+
+            let count = 5;
+
+            setInterval(function () {
+                if (count > 0) {
+                    document
+                        .getElementById('count')
+                        .innerHTML = count;
+                    count--;
+                }
+                if (count == 0) {
+                    document
+                        .getElementById('count')
+                        .innerHTML = '떙';
+                }
+            }, 2000);
+        </script>
+    </body>
+</html>

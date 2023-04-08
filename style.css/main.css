@@ -52,3 +52,20 @@ body {
         height: 500px;
     }
 }
+
+#alert {
+    text-align: center;
+    background-color: bisque;
+    height: 100px;
+    visibility: hidden;
+    transition: 1s;
+    opacity: 0;
+}
+#alert>h2 {
+    padding-top: 30px;
+}
+#alert1 {
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+}

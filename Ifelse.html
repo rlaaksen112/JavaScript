@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css/main.css">
+        <script
+            src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <button id="btn1">Modal Window</button>
+        <div class="modal">
+            <div class="modal_overlay"></div>
+            <div class="modal_contents">
+                <h1>I Am Modal</h1>
+                <button class="btn">X</button>
+            </div>
+            <form action="success.html" id="form_1">
+                <div class="my-3">
+                    <input type="text" class="text">
+                </div>
+                <div class="my-3">
+                    <input type="password" class="password">
+                </div>
+                <button type="submit" class="btn btn-primary" id="send">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+        </div>
+        <button type="button" class="dark_white" id="btn2">닫기</button>
+
+        <script>
+            let count = 1;
+            $('#btn2').on('click', function () {
+                count++;
+                if (count % 2 == 0) {
+                    $('body').css('background-color', 'black');
+                } else {
+                    $('body').css('background-color', 'white');
+                }
+            })
+
+            function game369(a) {/* 369 Game */
+                if (a % 9 == 0) {
+                    console.log('짝짝');
+                } else if (a % 3 == 0) {
+                    console.log('짝');
+                } else {
+                    console.log('통과');
+                }
+            }
+            game369(27);
+
+            function pass(a, b) {
+                if ((a + b) > 120 && a >= 40 && b >= 40) {
+                    console.log('통과');
+                } else {
+                    console.log('불합격');
+                }
+            }
+            pass(40, 100);
+
+            $('#btn1').on('click', function () {
+                $('.modal').toggleClass('modal_js');
+            })
+
+            $('.btn').on('click', function () {
+                $('.modal').removeClass('modal_js');
+            })
+
+            const a = document
+                .getElementsByClassName('text')
+                .value;
+            const aa = document
+                .getElementsByClassName('password')
+                .value;
+            $('#form_1').on('submit', function (e) {
+                if (a == null) {
+                    alert('Id를 입력 하세요')
+                    e.preventDefault();/* form전송 막기 */
+                }
+                if (aa == null && aa.length < 6) {
+                    alert('Pw를 입력 하세요')
+                    e.preventDefault();/* form전송 막기 */
+                }
+
+                /* if else문 사용시 처음 if문이 참일시 뒤에 else문은 생략된다. */
+            })
+        </script>
+    </body>
+</html>

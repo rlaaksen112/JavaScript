@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css/main.css">
+        <script
+            src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <button id="btn1">Modal Window</button>
+        <div class="modal">
+            <div class="modal_overlay"></div>
+            <div class="modal_contents">
+                <h1>I Am Modal</h1>
+                <button class="btn">X</button>
+            </div>
+        </div>
+
+        <script>
+
+            // document
+            //     .getElementById('btn1')
+            //     .addEventListener('click', function () {
+            //         document
+            //             .getElementsByClassName('modal')[0]
+            //             .classList
+            //             .toggle('modal_js');
+            //     })
+            $('#btn1').on('click',function(){
+                $('.modal').toggleClass('modal_js');
+            })
+
+            $('.btn').on('click',function(){
+                $('.modal').removeClass('modal_js');
+            })
+        </script>
+    </body>
+</html>

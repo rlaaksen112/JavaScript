@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css/main.css">
+        <script
+            src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div style="overflow: hidden;">
+            <div class="slide-container">
+                <div class="slide-box">
+                    <img src="img/car1.png" alt="car1">
+                </div>
+                <div class="slide-box">
+                    <img src="img/car2.png" alt="car2">
+                </div>
+                <div class="slide-box">
+                    <img src="img/car3.png" alt="car3">
+                </div>
+            </div>
+        </div>
+        <button class="slide-1">1</button>
+        <button class="slide-2">2</button>
+        <button class="slide-3">3</button>
+        <button class="slide-5">이전</button>
+        <button class="slide-4">다음</button>
+
+        <script>
+            // $('.slide-1').on('click', function () {
+            // $('.slide-container').css('transform', ''); }); $('.slide-2').on('click',
+            // function () {     $('.slide-container').css('transform',
+            // 'translateX(-100vw)'); }); $('.slide-3').on('click', function () {
+            // $('.slide-container').css('transform', 'translateX(-200vw)'); });
+            // document.querySelector('.slide-1').addEventListener('click',function(){
+            // document.querySelector('.slide-container').style.transform = ''; })
+            // document.querySelector('.slide-2').addEventListener('click',function(){
+            // document.querySelector('.slide-container').style.transform =
+            // 'translateX(-100vw)'; })
+            // document.querySelector('.slide-3').addEventListener('click',function(){
+            // document.querySelector('.slide-container').style.transform =
+            // 'translateX(-200vw)'; })
+            let aa = document.querySelector('.slide-container');
+            // document     .querySelector('.slide-4')     .addEventListener('click',
+            // function () {         if (aa.style.transform == '') {             document
+            // .querySelector('.slide-container')                 .style .transform =
+            // 'translateX(-100vw)';         } else if (aa.style.transform ==
+            // 'translateX(-100vw)') {             document
+            // .querySelector('.slide-container')                 .style .transform =
+            // 'translateX(-200vw)';         } else if (aa.style.transform ==
+            // 'translateX(-200vw)') {             document
+            // .querySelector('.slide-container')                 .style .transform = '';
+            // }     })
+            let count = 1;
+            document/* 다음 버튼 */
+                .querySelector('.slide-4')
+                .addEventListener('click', function () {
+                    document
+                        .querySelector('.slide-container')
+                        .style
+                        .transform = 'translateX(-' + count + '00vw)';
+                    count += 1;
+                })
+            document/* 이전 버튼 */
+                .querySelector('.slide-5')
+                .addEventListener('click', function () {
+                    count -= 1;
+                    document
+                        .querySelector('.slide-container')
+                        .style
+                        .transform = 'translateX(-' + count + '00vw)';
+                })
+        </script>
+    </body>
+</html>

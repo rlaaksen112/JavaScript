@@ -37,18 +37,18 @@
             let count = 5;
 
             setInterval(function () {
-                if (count > 0) {
+                if (count > -1) {
                     document
                         .getElementById('count')
                         .innerHTML = count;
+                    if (count == 0) {
+                        document
+                            .getElementById('count')
+                            .innerHTML = '땡';
+                    }
                     count--;
                 }
-                if (count == 0) {
-                    document
-                        .getElementById('count')
-                        .innerHTML = '떙';
-                }
-            }, 2000);
+            }, 1000);
         </script>
     </body>
 </html>

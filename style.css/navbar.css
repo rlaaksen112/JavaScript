@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+#navbar {
+    background-color: #263343;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px  12px;
+    font-family: 'Black Han Sans', sans-serif;
+}
+.navbar_logo {
+    font-size: 24px;
+    color: white;
+}
+.navbar_logo i{
+    color: #d49466;
+}
+
+.navbar_list {
+    display: flex;
+}
+.navbar_list li {
+    padding: 8px 12px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css/reset.css">
+        <title>Detail</title>
+        <style>
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .list{
+                display: flex;
+                font-weight: bold;
+                gap: 10px;
+                font-size: 30px;
+                align-items: center;
+            }
+            .list li{
+                color: wheat;
+                border-right: 1px solid wheat;
+                padding: 10px 12px;  
+                transition: 1s;
+            }
+            .list li:hover{
+                color : rgb(156, 145, 45);
+            }
+            .tab-content {
+                position: absolute;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                top: 60px;
+                width: 56vh;
+                height: 40vh;
+                transition: 1s;
+                z-index: 100;
+                transform: translateX(-700px);
+            }
+            .show {
+                transform: translateX(0);
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <ul class="list">
+                <li class="tab-button">Products</li>
+                <li class="tab-button orange">Information</li>
+                <li class="tab-button">Shipping</li>
+            </ul>
+            <div class="tab-content">
+                <p>상품설명입니다. Product</p>
+            </div>
+            <div class="tab-content">
+                <p>스펙설명입니다. Information</p>
+            </div>
+            <div class="tab-content">
+                <p>배송정보입니다. Shipping</p>
+            </div>
+        </div>
+
+        <script src="detail.js"></script>
+    </body>
+</html>

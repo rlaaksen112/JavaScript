@@ -1,6 +1,5 @@
-body {
-    margin: 0;
-}
+@import url(./reset.css);
+
 .alert-box  {
     background-color: rgb(116, 192, 54);
     color: rgb(98, 102, 44);

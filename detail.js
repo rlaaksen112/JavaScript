@@ -40,10 +40,16 @@ for (let i = 0; i < 3; i++) {
             .querySelectorAll('.detail h2')[i]
             .innerHTML = product
             .name[i];
-        document
-            .querySelectorAll('.detail p')[i]
-            .innerHTML = '가격 : ' + product
-            .price[i];
+        // document
+        //     .querySelectorAll('.detail p')[i]
+        //     .innerHTML = '가격 : ' + product
+        //     .price[i];
+        product.price.forEach(function(a,i){
+            document
+                .querySelectorAll('.detail p')[i]
+                .innerHTML = '가격 : ' + product
+                .price[i];
+        })
     }
 }
 let select11 = document.querySelectorAll('.select_car')[0];     /* 두번쨰 셀렉트창 */

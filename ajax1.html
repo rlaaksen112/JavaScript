@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row"></div>
+            <button class="btn" id="more">더보기</button>
+        </div>
+    </div>
+    <script>
+        let row = document.querySelectorAll('.row')[0];
+        let product = [
+            {id : 0 , price : 70000 , name : '자동차'},
+            {id : 1 , price : 80000 , name : '택시'},
+            {id : 2 , price : 110000 , name : '버스'}
+        ];
+        product.forEach((a,i) => {
+            let card = `<div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100">
+                    <h5>${product[i].name}</h5>
+                    <p>${product[i].price}</p>`;
+            row.insertAdjacentHTML('beforeend',card);
+        });
+
+        // $.get('https://codingapple1.github.io/js/more1.json').done((date) => {
+        //     console.log(date);
+        // })
+        let count = 0;
+        $('#more').click(() => {
+            count += 1;
+            if(count == 1){
+                $.get('https://codingapple1.github.io/js/more1.json')
+                    .done((date) => {
+                        date.forEach((a,i) => {
+                            let product = 
+                                `<div class="col-sm-4">
+                                <img src="https://via.placeholder.com/600" class="w-100">
+                                <h5>${date[i].title}</h5>
+                                <p>${date[i].price}</p>`;
+                            $('.row').eq(0).append(product);
+                        });
+                    });
+            }else if(count == 2){
+                $.get('https://codingapple1.github.io/js/more2.json')
+                    .done((date) => {
+                        date.forEach((a,i) => {
+                            let product = 
+                                `<div class="col-sm-4">
+                                <img src="https://via.placeholder.com/600" class="w-100">
+                                <h5>${date[i].title}</h5>
+                                <p>${date[i].price}</p>`;
+                            $('.row').eq(0).append(product);
+                        });
+                    });
+            }else if(count <= 3){
+                alert('제품 더 없음');
+            }
+            console.log(count+'번 누름');
+        });
+
+
+    </script>
+</body>
+</html>
